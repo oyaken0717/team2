@@ -21,6 +21,11 @@ class AgendasController < ApplicationController
     end
   end
 
+  def destroy
+    @agenda.destroy
+    redirect_to agendas_path, 'アジェンダを削除しました'
+  end
+
   private
 
   def set_agenda
