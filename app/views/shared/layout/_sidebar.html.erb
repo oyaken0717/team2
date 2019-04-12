@@ -35,7 +35,11 @@
               <p>
                 <i class="right fa fa-angle-left"></i>
                 <%= agenda.title %>
-                <object><%= link_to "削除", agenda_path(agenda.id), method: :delete, data:{confirm: "本当に削除しますか？"} %></object>
+
+                <% if current_user == agenda.user %>
+                  <object><%= link_to "削除", agenda_path(agenda.id), method: :delete, data:{confirm: "本当に削除しますか？"} %></object>
+                <% end %>
+
               </p>
             </a>
             <ul class="nav nav-treeview" style="display: block;">
