@@ -38,6 +38,15 @@ class TeamsController < ApplicationController
     end
   end
 
+  def change_owner
+    if @team.update(team_params)
+      redirect_to @team, notice: '権限移動に成功しました！'
+    else
+      flash.now[:error] = '保存に失敗しました、、'
+      render @team
+    end
+  end
+
   def destroy
     @team.destroy
     redirect_to teams_url, notice: 'チーム削除に成功しました！'
