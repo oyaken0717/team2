@@ -40,6 +40,7 @@ class TeamsController < ApplicationController
 
   def change_owner
     if @team.update(owner_params)
+      ContactMailer.contact_mail_owner(@team).deliver
       redirect_to @team, notice: '権限移動に成功しました！'
     else
       flash.now[:error] = '保存に失敗しました、、'
