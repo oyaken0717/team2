@@ -1,3 +1,15 @@
+/* line 1, /Users/oyamadakenji/Desktop/team2/app/assets/stylesheets/shared.scss */
+.test1 {
+  background-color: red;
+  margin: 50px;
+}
+
+/* line 6, /Users/oyamadakenji/Desktop/team2/app/assets/stylesheets/shared.scss */
+.content {
+  border-color: red;
+  border-style: solid;
+  border-width: 20px;
+}
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -10,7 +22,8 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
+
+
  */
+
  
