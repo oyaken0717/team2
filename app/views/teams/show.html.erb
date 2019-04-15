@@ -48,7 +48,8 @@
                       <% else %>
                         <td></td>
                       <% end%>
-                      <% if @team.owner_id != assign.user.id %>
+                      <%# if @team.owner_id != assign.user.id %>
+                      <% if current_user.id == @team.owner_id && @team.owner_id != assign.user.id %>
                         <td><%= link_to "権限移動", change_owner_team_path(@team, owner_id: assign.user.id), method: :patch %></td>
                       <% else %>
                         <td></td>
