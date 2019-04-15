@@ -1,8 +1,7 @@
 class ContactMailer < ApplicationMailer
-  def contact_mail(contact)
-    @contact = contact
-    mail to: "#{contact.user.email}",
-
-    subject: "お問い合わせの確認メール"
+  def contact_mail(member)
+    @user = member
+    mail to: "#{@user.email}",
+    subject: "チームメンバー変更のお知らせ"
   end
 end

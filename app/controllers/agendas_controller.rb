@@ -23,8 +23,11 @@ class AgendasController < ApplicationController
 
   def destroy
     @agenda = Agenda.find(params[:id])
+    @agenda.team.members.each do |member|
+      # binding.pry
+      ContactMailer.contact_mail(member).deliver
+    end
     @agenda.destroy
-    ContactMailer.contact_mail(@agenda).deliver
     redirect_to dashboard_url, notice: 'アジェンダを削除しました'
   end
 
